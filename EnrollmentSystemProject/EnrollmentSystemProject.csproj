@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C4D443CD-F0A1-4312-B1F3-3496A9C7F095}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EnrollmentSystemProject</RootNamespace>
+    <AssemblyName>EnrollmentSystemProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.3.0.0\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.Framework.3.0.0\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\Button_WOC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\JButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Classes\AddConnection.cs" />
+    <Compile Include="EnrollmentSystem\Classes\Employee.cs" />
+    <Compile Include="EnrollmentSystem\Classes\Enrollment.cs" />
+    <Compile Include="EnrollmentSystem\Classes\EnrollmentDetail.cs" />
+    <Compile Include="EnrollmentSystem\Classes\Items.cs" />
+    <Compile Include="EnrollmentSystem\Classes\LoginAuthentication.cs" />
+    <Compile Include="EnrollmentSystem\Classes\Person.cs" />
+    <Compile Include="EnrollmentSystem\Classes\Students.cs" />
+    <Compile Include="EnrollmentSystem\Classes\UserLogin.cs" />
+    <Compile Include="EnrollmentSystem\Forms\CreateUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\CreateUserForm.Designer.cs">
+      <DependentUpon>CreateUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\DashBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\DashBoardForm.Designer.cs">
+      <DependentUpon>DashBoardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\DepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\DepartmentForm.Designer.cs">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\EnrollForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\EnrollForm1.Designer.cs">
+      <DependentUpon>EnrollForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\EnrollForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\EnrollForm2.Designer.cs">
+      <DependentUpon>EnrollForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\EnrollForm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\EnrollForm3.Designer.cs">
+      <DependentUpon>EnrollForm3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\EnrollmentReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\EnrollmentReport.Designer.cs">
+      <DependentUpon>EnrollmentReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\PaymentForm.Designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\PolicyReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\PolicyReportForm.Designer.cs">
+      <DependentUpon>PolicyReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\ScholarshipReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\ScholarshipReportForm.Designer.cs">
+      <DependentUpon>ScholarshipReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\StudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\StudentForm.Designer.cs">
+      <DependentUpon>StudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\SubMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\SubMenuForm.Designer.cs">
+      <DependentUpon>SubMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\TransactionLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollmentSystem\Forms\TransactionLogForm.Designer.cs">
+      <DependentUpon>TransactionLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ERU_CoreUserLogin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERU_CoreUserLogin.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="EnrollmentSystem\Forms\CreateUserForm.resx">
+      <DependentUpon>CreateUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentSystem\Forms\DashBoardForm.resx">
+      <DependentUpon>DashBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentSystem\Forms\DepartmentForm.resx">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentSystem\Forms\EnrollForm1.resx">
+      <DependentUpon>EnrollForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentSystem\Forms\EnrollForm2.resx">
+      <DependentUpon>EnrollForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentSystem\Forms\EnrollForm3.resx">
+      <DependentUpon>EnrollForm3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentSystem\Forms\EnrollmentReport.resx">
+      <DependentUpon>EnrollmentReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentSystem\Forms\PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentSystem\Forms\PolicyReportForm.resx">
+      <DependentUpon>PolicyReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentSystem\Forms\ScholarshipReportForm.resx">
+      <DependentUpon>ScholarshipReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentSystem\Forms\SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentSystem\Forms\StudentForm.resx">
+      <DependentUpon>StudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentSystem\Forms\SubMenuForm.resx">
+      <DependentUpon>SubMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnrollmentSystem\Forms\TransactionLogForm.resx">
+      <DependentUpon>TransactionLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="ERU_CoreUserLogin.xsc">
+      <DependentUpon>ERU_CoreUserLogin.xsd</DependentUpon>
+    </None>
+    <None Include="ERU_CoreUserLogin.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ERU_CoreUserLogin.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ERU_CoreUserLogin.xss">
+      <DependentUpon>ERU_CoreUserLogin.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AttendanceSystem\Classes4\" />
+    <Folder Include="AttendanceSystem\DataBases4\" />
+    <Folder Include="AttendanceSystem\Forms4\" />
+    <Folder Include="AttendanceSystem\Image4\" />
+    <Folder Include="AttendanceSystem\Reports4\" />
+    <Folder Include="AttendanceSystem\UserControl4\" />
+    <Folder Include="EnrollmentSystem\DataBases\" />
+    <Folder Include="EnrollmentSystem\Reports\" />
+    <Folder Include="EnrollmentSystem\UserControl\" />
+    <Folder Include="ScheduleSystem\Classes2\" />
+    <Folder Include="ScheduleSystem\Databases2\" />
+    <Folder Include="ScheduleSystem\Forms2\" />
+    <Folder Include="ScheduleSystem\Images2\" />
+    <Folder Include="ScheduleSystem\Reports2\" />
+    <Folder Include="ScheduleSystem\UserControls2\" />
+    <Folder Include="ScoringSystem\Classes3\" />
+    <Folder Include="ScoringSystem\DataBases3\" />
+    <Folder Include="ScoringSystem\Forms3\" />
+    <Folder Include="ScoringSystem\Images3\" />
+    <Folder Include="ScoringSystem\Reports3\" />
+    <Folder Include="ScoringSystem\UserControls3\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EnrollmentSystem\Images\ABCImage.jpg" />
+    <Content Include="EnrollmentSystem\Images\ABCLogo.jpg" />
+    <Content Include="EnrollmentSystem\Images\ABCLogo2.jpg" />
+    <Content Include="EnrollmentSystem\Images\AttendanceIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\Close.jpg" />
+    <Content Include="EnrollmentSystem\Images\Close2.jpg" />
+    <Content Include="EnrollmentSystem\Images\DashboardIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\DepartmentIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\DormitoryIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\EnrollIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\EnrollmentIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\Export.jpg" />
+    <Content Include="EnrollmentSystem\Images\ExportIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\EyeIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\Facebook.jpg" />
+    <Content Include="EnrollmentSystem\Images\ImageDashboard1.jpg" />
+    <Content Include="EnrollmentSystem\Images\ImageDashboard2.jpg" />
+    <Content Include="EnrollmentSystem\Images\ImageDashboard3.jpg" />
+    <Content Include="EnrollmentSystem\Images\Instagram.jpg" />
+    <Content Include="EnrollmentSystem\Images\kheng.jpg" />
+    <Content Include="EnrollmentSystem\Images\LibraryIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\MajorIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\PasswordIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\PaymentIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\PhotoUser.jpg" />
+    <Content Include="EnrollmentSystem\Images\ProgramIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\Re-Examination.jpg" />
+    <Content Include="EnrollmentSystem\Images\ReportEnrollment.jpg" />
+    <Content Include="EnrollmentSystem\Images\ReportIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\ReportIncome.jpg" />
+    <Content Include="EnrollmentSystem\Images\ReportScholarship.jpg" />
+    <Content Include="EnrollmentSystem\Images\RoomManagement.jpg" />
+    <Content Include="EnrollmentSystem\Images\Save.jpg" />
+    <Content Include="EnrollmentSystem\Images\Save2.jpg" />
+    <Content Include="EnrollmentSystem\Images\ScheduleIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\ScoringIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\Search.jpg" />
+    <Content Include="EnrollmentSystem\Images\SettingIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\Sokheng.jpg" />
+    <Content Include="EnrollmentSystem\Images\Sopheaktra.jpg" />
+    <Content Include="EnrollmentSystem\Images\StudentIcon.jpg" />
+    <Content Include="EnrollmentSystem\Images\Telegram.jpg" />
+    <Content Include="EnrollmentSystem\Images\Tiktok.jpg" />
+    <Content Include="EnrollmentSystem\Images\Transaction.jpg" />
+    <Content Include="EnrollmentSystem\Images\Vannuk.jpg" />
+    <Content Include="EnrollmentSystem\Images\Youtube.jpg" />
+    <Content Include="EnrollmentSystem\Images\Youtube2.jpg" />
+    <None Include="Resources\ABCImage.jpg" />
+    <None Include="Resources\ABCLogo2.jpg" />
+    <None Include="Resources\PhotoUser.jpg" />
+    <None Include="Resources\PasswordIcon.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
